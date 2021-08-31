@@ -3,37 +3,43 @@ This repository includes two parts about feeder cattle marketing. First, we esti
 
 
 
-# 1. Feeder Cattle Pricing Model based on auction data from upstate NY livestock exchange
-This section contains the pricing model to determine the main variables which influence the feeder cattle price. Our analysis is based on transaction-level feeder cattle auction prices at the Finger Lakes Livestock Exchange in Canandaigua, NY during the spring (March through May) and fall (September through December) seasons from October 2011 through April 2017. The data includes transactions from 11,926 lots of cattle (3,565 in spring and 8,163 in fall) encompassing 35,703 head (10,588 in spring and 25,115 in fall) over 54 auction dates.
+# 1. Feeder Cattle Pricing Model Code
+This section contains the pricing model to determine the main variables which influence the feeder cattle price. We estimate a price-dependent, risk-responsive input-demand model for feeder cattle based on feeder cattle auction prices at an upstate NY livestock exchange over the course of six years. The data encompass nearly 12,000 lots of feeder cattle over 54 auction dates. The pricing model considers a series of covariates including market conditions, seasonality, and lot and quality characteristics. While consistent in formulation with Dhuyvetter and Schroeder (2000), our approach importantly extends cattle characteristics beyond simply breed and sex to consider preconditioning, frame size, muscling, thriftiness, and the presence of horns.  Prices differ not only by weight, but also on feeder cattle quality and market forces that reflect the complex interactions between markets for feed and finished (fed) cattle. The pricing model provides for direct calculation of expected market prices for feeder cattle under differing weights, market conditions, and quality characteristics – something necessary as a decision aid when making price forecasts.
 
+
+Here is the pricing model code in R. In this code, we estimate three models: lm1 is the simplest pricing model without interaction terms. lm2 is our pricing model. Jing is Jing Qian's model. DS denotes the Dhuyvetter and Schroeder model in 2000.
 
  
 
-- [CapitalPCs061521.xlsx](https://github.com/schmi-ny/County-Level-Community-Capital-Stocks/blob/main/CapitalPCs061521.xlsx)
-- [CapitalMaps.zip](https://github.com/schmi-ny/County-Level-Community-Capital-Stocks/blob/main/CapitalMaps.zip)
+- [PricingModel.R](https://github.com/my497/FeederCattle_ARER/blob/main/PricingModel.R)
 
-# 2. Code Files
-This section contains the Stata and Matlab code files. The first part of the Stata code contains the Principal Component Analysis for each capital and standardizes them into indicies (0-100). This part of the code also computes descriptive statistics, differentiated by metro and nonmetro status. The second part of the Stata code estimates the association of the capitals to the percentage of farms participating in direct-to-consumer markets using nonspatial (Ordinary Least Squares) and spatial (Spatial Durbin Model) approaches. Marginal effects are also computed. 
 
-The Matlab code estimates the direct, indirect, and total spatial spillover effects (for the Spatial Durbin Modedl) of the capital stock variables differentiated by metro, nonmetro metro-adacent, and nonmetro nonmetro-adjacent status, following LeSage and Pace (2009, pp 114-115). The Excel file of coordinates is needed to run this code.
+# 2. Decision Making Tool Code
+We apply forecasting from the pricing model to a seasonal delta profit model to inform producer decision making on optimal timing for feeder sales, conditional on information available as animals come off pasture and expected feeding costs for over-wintering. we use our pricing model to forecast current and future feeder prices conditional on market and feeder cattle characteristics, we follow an alternative approach. The delta profit model outputs the expected profit gain (or loss) of selling the feeder cattle the following spring relative to the near term fall, explicitly accounting for price slides. Applying the model to our historical auction data, we find that 55% of the cattle sold in the fall were expected to bring in more profit per head at that time if sold the following spring. 
 
-- Stata code: [CapCodeStata061521.do](https://github.com/schmi-ny/County-Level-Community-Capital-Stocks/blob/main/CapCodeStata061521.do)
-- Matlab code: [CapCodeMatlab061521.m](https://github.com/schmi-ny/County-Level-Community-Capital-Stocks/blob/main/CapCodeMatlab061521.m)
-- Coordinates file for Matlab: [Coordinates.xlsx](https://github.com/schmi-ny/County-Level-Community-Capital-Stocks/blob/main/Coordinates.xlsx)
+Here is the decision making model code in R.
 
-LeSage, J., and R.K. Pace. 2009. Introduction to Spatial Econometrics. Boca Raton, FL: Taylor and Francis.
+- Stata code: [DecisionMakingModel.R](https://github.com/my497/FeederCattle_ARER/blob/main/DecisionMakingModel.R)
+
 
 # 3. Source Data File
-This section contains the full source data file for all variables used in the Principal Component Analysis for derivation of the capital stock indices and in the follow on applicaiton of them to their association with the percent of farms participating in direct-to-consumer markets. A description of the variables is included in the Food Policy paper.  
+Our analysis is based on transaction-level feeder cattle auction prices at the Finger Lakes Livestock Exchange in Canandaigua, NY during the spring (March through May) and fall (September through December) seasons from October 2011 through April 2017. The data includes transactions from 11,926 lots of cattle (3,565 in spring and 8,163 in fall) encompassing 35,703 head (10,588 in spring and 25,115 in fall) over 54 auction dates.
 
-- [FullDataFile061521.xlsx](https://github.com/schmi-ny/County-Level-Community-Capital-Stocks/blob/main/FullDataFile061521.xlsx)
+- [dataFinal.csv](https://github.com/my497/FeederCattle_ARER/blob/main/dataFinal.csv)
 
-# 4. More Information
-Schmit, T.M., B.B.R. Jablonski, A. Bonanno, and T.G. Johnson. 2021. Measuring stocks of community wealth and their association with food systems efforts in rural and urban places. Food Policy, forthcoming.
 
-# 5. Acknowledgements 
-We wish to thank Libby Christensen for her research assistance, Jill Clark for creating the capital stock maps, and John Pender for comments received on construction of the capital stock indices and on prior versions of this manuscript. We are also appreciative of the helpful comments received by attendees of the Advances in the Economic Analysis of Food System Drivers and Effects pre-conference workshop at the Northeastern Agricultural and Resource Economics Association’s 2018 annual meeting where a previous version of this work was presented.
+# 4. Acknowledgements 
+We wish to thank the staff of Cornell Cooperative Extension (CCE) that assisted in our data collection efforts and to Jing Qian who developed a baseline of empirical results during the initial data collection phase. We are also appreciative of the helpful comments received at the CCE Ag and Food Systems In-Service Program where a previous version of this research was presented. 
 
-# 6. Funding
-This material is based upon work supported by the Agriculture and Food Research Initiative [grant number 2015-68006-22848] from the U.S. Department of Agriculture, National Institute of Food and Agriculture. The funder played no role in the study design or the decision to submit the article for publication. The authors have no financial interest or benefit from the direct application of this research. The views expressed are the authors’ and do not necessarily represent the policies or views of any sponsoring agencies.
+
+# 5. Financial Disclosure
+
+This work was supported by a joint research under #02267661 and #1004039 and extension program funded by the Cornell University Agricultural Experiment Station (Hatch funds) and Cornell Cooperative Extension (Smith Lever funds) received from the National Institutes of Food and Agriculture (NIFA,) U.S. Department of Agriculture (USDA). Any opinions, findings, conclusions, or recommendations expressed in this publication are those of the author(s) and do not necessarily reflect the view of USDA.
+
+# 6. Conflicts of Interest
+
+None.
+
+
+
 
