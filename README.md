@@ -14,7 +14,7 @@ Here is the pricing model code in R. In this code, we estimate three models: lm1
 - [PricingModel.R](https://github.com/my497/FeederCattle_ARER/blob/main/PricingModel.R)
 
 
-# 2. Decision Making Tool Code
+# 2. Decision Making Model Code
 We apply forecasting from the pricing model to a seasonal delta profit model to inform producer decision making on optimal timing for feeder sales, conditional on information available as animals come off pasture and expected feeding costs for over-wintering. we use our pricing model to forecast current and future feeder prices conditional on market and feeder cattle characteristics, we follow an alternative approach. The delta profit model outputs the expected profit gain (or loss) of selling the feeder cattle the following spring relative to the near term fall, explicitly accounting for price slides. Applying the model to our historical auction data, we find that 55% of the cattle sold in the fall were expected to bring in more profit per head at that time if sold the following spring. 
 
 Here is the decision making model code in R.
