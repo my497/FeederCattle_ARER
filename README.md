@@ -19,7 +19,7 @@ We apply forecasting from the pricing model to a seasonal delta profit model to 
 
 Here is the decision making model code in R.
 
-- Stata code: [DecisionMakingModel.R](https://github.com/my497/FeederCattle_ARER/blob/main/DecisionMakingModel.R)
+- [DecisionMakingModel.R](https://github.com/my497/FeederCattle_ARER/blob/main/DecisionMakingModel.R)
 
 
 # 3. Source Data File
