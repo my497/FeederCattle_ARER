@@ -1,4 +1,4 @@
-# FeederCattle_ARER
+# FeederCattle_NYS
 This repository includes two parts about feeder cattle marketing. First, we estimate a price-dependent, risk-responsive input-demand model for feeder cattle based on feeder cattle auction prices at an upstate NY livestock exchange over the course of six years. The data encompass nearly 12,000 lots of feeder cattle over 54 auction dates. The pricing model considers a series of covariates including market conditions, seasonality, and lot and quality characteristics. Second, we apply forecasting from the pricing model to a seasonal delta profit model to inform producer decision making on optimal timing for feeder sales, conditional on information available as animals come off pasture and expected feeding costs for over-wintering. 
 
 
