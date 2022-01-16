@@ -1,5 +1,5 @@
 # FeederCattle_NYS
-This repository includes two parts about feeder cattle marketing. First, we estimate a price-dependent, risk-responsive input-demand model for feeder cattle based on feeder cattle auction prices at an upstate NY livestock exchange over the course of six years. The data encompass nearly 12,000 lots of feeder cattle over 54 auction dates. The pricing model considers a series of covariates including market conditions, seasonality, and lot and quality characteristics. Second, we apply forecasting from the pricing model to a seasonal delta profit model to inform producer decision making on optimal timing for feeder sales, conditional on information available as animals come off pasture and expected feeding costs for over-wintering. 
+This repository includes two parts about feeder cattle marketing. First, we estimate a price-dependent, risk-responsive input-demand model for feeder cattle based on feeder cattle auction prices at an upstate NY livestock exchange over the course of six years. The data encompass 8,977 feeder cattle transactions over 54 auction dates. The pricing model considers a series of covariates including market conditions, seasonality, and lot and quality characteristics. Second, we apply forecasting from the pricing model to a seasonal delta profit model to inform producer decision making on optimal timing for feeder sales, conditional on information available as animals come off pasture and expected feeding costs for over-wintering. 
 
 
 
@@ -15,17 +15,17 @@ Here is the pricing model code in R. In this code, we estimate four models: lm1 
 
 
 # 2. Decision Making Model Code
-We apply forecasting from the pricing model to a seasonal delta profit model to inform producer decision making on optimal timing for feeder sales, conditional on information available as animals come off pasture and expected feeding costs for over-wintering. We use our pricing model to forecast current and future feeder prices conditional on market and feeder cattle characteristics. We also considered death loss, opportunity cost and interest cost in the delta profit model. The delta profit model outputs the expected profit gain (or loss) of selling the feeder cattle the following spring relative to the near term fall , explicitly accounting for price slides. Applying the model to our historical auction data, we find that 50.5% of the cattle sold in the fall were expected to bring in more profit per head at that time if sold the following spring. 
+We apply forecasting from the pricing model to a seasonal delta profit model to inform producer decision making on optimal timing for feeder sales, conditional on information available as animals come off pasture and expected feeding costs for over-wintering. We use our pricing model to forecast current and future feeder prices conditional on market and feeder cattle characteristics. We also considered death loss, opportunity cost and interest cost in the delta profit model. The delta profit model outputs the expected profit gain (or loss) of selling the feeder cattle the following spring relative to the near term fall , explicitly accounting for price slides. Applying the model to our historical auction data, we find that 50.56% of the cattle sold in the fall were expected to bring in more profit per head at that time if sold the following spring. What's more, we also calculate the delta profits in 95% confidence interval with lower and higher bounds.
 
 Here is the decision making model code in R.
 
 - [DecisionMakingModel.R](https://github.com/my497/FeederCattle_ARER/blob/main/DecisionMakingModel.R)
-
+- [DecisionMakingModel_Conf_Interval.R](https://github.com/my497/FeederCattle_ARER/blob/main/DecisionMakingModel_Conf_Interval.R)
 
 # 3. Source Data File
-Our analysis is based on transaction-level feeder cattle auction prices at the Finger Lakes Livestock Exchange in Canandaigua, NY during the spring (March through May) and fall (September through December) seasons from October 2011 through April 2017. The data includes transactions from 11,926 lots of cattle (3,565 in spring and 8,163 in fall) encompassing 35,703 head (10,588 in spring and 25,115 in fall) over 54 auction dates.
+Our analysis is based on transaction-level feeder cattle auction prices at the Finger Lakes Livestock Exchange in Canandaigua, NY during the spring (March through May) and fall (September through December) seasons from October 2011 through April 2017. The data includes 8977 transactions of cattle (2,671 in spring and 6,306 in fall) encompassing 22,466 head (6,640 in spring and 15,826 in fall) over 54 auction dates.
 
-- [dataFinal.csv](https://github.com/my497/FeederCattle_ARER/blob/main/dataFinal.csv)
+- [datac.csv](https://github.com/my497/FeederCattle_ARER/blob/main/datac.csv)
 
 
 # 4. Acknowledgements 
