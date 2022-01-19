@@ -15,7 +15,7 @@ Here is the pricing model code in R. In this code, we estimate four models: lm1 
 
 
 # 2. Decision Making Model Code
-We apply forecasting from the pricing model to a seasonal delta profit model to inform producer decision making on optimal timing for feeder sales, conditional on information available as animals come off pasture and expected feeding costs for over-wintering. We use our pricing model to forecast current and future feeder prices conditional on market and feeder cattle characteristics. We also considered death loss, opportunity cost and interest cost in the delta profit model. The delta profit model outputs the expected profit gain (or loss) of selling the feeder cattle the following spring relative to the near term fall , explicitly accounting for price slides. Applying the model to our historical auction data, we find that 50.56% of the cattle sold in the fall were expected to bring in more profit per head at that time if sold the following spring. What's more, we also calculate the delta profits in 95% confidence interval with lower and higher bounds.
+We apply forecasting from the pricing model to a seasonal delta profit model to inform producer decision making on optimal timing for feeder sales, conditional on information available as animals come off pasture and expected feeding costs for over-wintering. We use our pricing model to forecast current and future feeder prices conditional on market and feeder cattle characteristics. We also considered death loss, opportunity cost and interest cost in the delta profit model. The delta profit model outputs the expected profit gain (or loss) of selling the feeder cattle the following spring relative to the near term fall , explicitly accounting for price slides. Applying the model to our historical auction data, we find that 50.56% of the cattle sold in the fall were expected to bring in more profit per head at that time if sold the following spring. We also add sensitivity analysis in the revised manuscript for the delta profit model by including two thresholds ($0 and $25 per head). What's more, we calculate the mean and lower bounds of delta profits from a 95% confidence interval.
 
 Here are the decision making model codes in R.
 
@@ -29,7 +29,7 @@ Our analysis is based on transaction-level feeder cattle auction prices at the F
 
 
 # 4. Acknowledgements 
-We wish to thank the staff of Cornell Cooperative Extension (CCE) that assisted in our data collection efforts and to Jing Qian who developed a baseline of empirical results during the initial data collection phase. We are also appreciative of the helpful comments received at the CCE Ag and Food Systems In-Service Program where a previous version of this research was presented. 
+We wish to thank the staff of Cornell Cooperative Extension (CCE) that assisted in our data collection efforts and to Jing Qian who developed the baseline empirical strategy during the initial data collection phase of this research. We are also appreciative of the helpful comments received at the CCE Ag and Food Systems In-Service Program where a previous version of this research was presented.
 
 
 # 5. Financial Disclosure
