@@ -7,7 +7,7 @@ This repository includes two parts about feeder cattle marketing. First, we esti
 This section contains the pricing model to determine the main variables which influence the feeder cattle price. While consistent in formulation with Dhuyvetter and Schroeder (2000), our approach importantly extends cattle characteristics beyond simply breed and sex to consider preconditioning, frame size, muscling, thriftiness, and the presence of horns.  Prices differ not only by weight, but also on feeder cattle quality and market forces that reflect the complex interactions between markets for feed and finished (fed) cattle. The pricing model provides for direct calculation of expected market prices for feeder cattle under differing weights, market conditions, and quality characteristics – something necessary as a decision aid when making price forecasts.
 
 
-Here is the pricing model code in R. In this code, we estimate four models: lm1 is the simplest pricing model without interaction terms. lm2 is our original pricing model,  Jing is the Qian (2014) model, DS is the Dhuyvetter and Schroeder (2000) model and lm_cf_lcf is our updated model with two interaction terms (weight with live cattle future, weight with corn future).
+Here is the pricing model code in R. lm_cf_lcf is our updated model with two interaction terms (weight with live cattle future, weight with corn future).
 
  
 
